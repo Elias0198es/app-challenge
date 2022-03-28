@@ -1,13 +1,13 @@
 import { StyleSheet, SafeAreaView, Text, View, ScrollView, TextInput, Keyboard, TouchableOpacity  } from 'react-native';
 import axios from 'axios';
 import { baseUrl } from '../../constants/baseUrl';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { EditRequest } from './_types/EditRequest';
 
 export default function PostEditScreen({route}: {route: any}) {
-  const { id } = route.params;
+  const { id, postTitle, postBody } = route.params;
 
-  const [form, setForm] = useState({title:"", body:""});
+  const [form, setForm] = useState({title: postTitle, body:postBody});
 
   const body : EditRequest = {
     title: form.title,
@@ -51,7 +51,8 @@ export default function PostEditScreen({route}: {route: any}) {
           <TextInput
             style={styles.textInput}
             placeholder="Título"
-            maxLength={20}
+            // maxLength={100}
+            multiline={true}
             onBlur={Keyboard.dismiss}
             value={form.body}
             onChangeText={(text)=>{setForm({...form, body:text})}}
@@ -76,6 +77,8 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20
   },
+  textHeight:{
+    maxHeight: 80},
   saveButton: {
     borderWidth: 1,
     borderColor: '#007BFF',

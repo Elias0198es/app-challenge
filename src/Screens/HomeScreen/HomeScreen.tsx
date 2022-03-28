@@ -47,7 +47,11 @@ export default function HomeScreen({navigation}: {navigation: any}) {
           <Button onPress={() => onClickDeletar(post.id)}
           title="deletar"
           />
-          <Button onPress={() => navigation.navigate('Edit', {id: post.id})}
+          <Button onPress={() => navigation.navigate('Edit', {
+            id: post.id,
+            postTitle: post.title,
+            postBody: post.body
+          })}
           title="Editar"
           />
         </View>
