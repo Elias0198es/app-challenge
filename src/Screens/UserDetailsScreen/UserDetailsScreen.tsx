@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function PostDetailsScreen() {
+export default function UserDetailsScreen() {
   return (
     <View style={styles.container}>
-      <Text>Essa página é a de detalhes de um post!</Text>
+      <Text>Essa página é a de informações de quem postou!</Text>
       <StatusBar style="auto" />
     </View>
   );

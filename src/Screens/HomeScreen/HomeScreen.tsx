@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Text, View, ScrollView } from 'react-native';
+import { Button, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 
 import { Avatar } from 'react-native-paper';
 import axios from 'axios';
@@ -41,7 +41,14 @@ export default function HomeScreen({navigation}: {navigation: any}) {
      
       <Container key={post.id}>
         <View>
-          <Avatar.Image size={24} source={require('../../../assets/avatar.png')} />
+        <TouchableOpacity
+        onPress={() => navigation.navigate('Details', {
+          id: post.userId,
+        })}
+        >
+          <Avatar.Image size={24} source={require('../../../assets/avatar.png')}
+          />
+        </TouchableOpacity>
           <Title><Text>{post.title}</Text></Title>
           <Text>{post.body}</Text>
           <Button onPress={() => onClickDeletar(post.id)}
