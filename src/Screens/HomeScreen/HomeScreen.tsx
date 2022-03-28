@@ -1,8 +1,11 @@
-import { StyleSheet, Button, Text, View } from 'react-native';
-import { baseUrl } from '../../constants/baseUrl';
 import React, { useState, useEffect } from 'react';
+import { Button, Text, View, ScrollView } from 'react-native';
 
+import { Avatar } from 'react-native-paper';
 import axios from 'axios';
+
+import { baseUrl } from '../../constants/baseUrl';
+import { Container,Title } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
@@ -11,37 +14,40 @@ export default function HomeScreen({navigation}: {navigation: any}) {
 
     axios.get(`${baseUrl}`).then((response) => {
       setPosts(response.data)
-      // console.log(response.data);
     });
 
   },[posts]);
 
+  // map do estado e estilização
   const dados =  posts.map((post: any) => {
     return (
-        <View key={post.id}>
-          <Text>{post.title}</Text>
+     
+      <Container key={post.id}>
+        <View>
+          <Avatar.Image size={24} source={require('../../../assets/avatar.png')} />
+          <Title><Text>{post.title}</Text></Title>
           <Text>{post.body}</Text>
+          <Button
+          title="deletar"
+          />
+          <Button
+          title="Editar"
+          />
         </View>
+      </Container>
+      
       )
   });
 
   return (
-    <View style={styles.container}>
+    <ScrollView >
       <Text>Essa página é a Home Screen!</Text>
-        {dados}
+
       <Button
         title="Cadastrar um post"
         onPress={() => navigation.navigate('Register')}
       />
-    </View>
+        {dados}
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
