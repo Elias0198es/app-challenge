@@ -22,12 +22,12 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   const deletePost =(id:number)=>{
     axios.delete(`${baseUrl}/${id}`, { 
       })
-      .then((res) => {
-          console.log("Post deletado",res)
+      .then(() => {
+          alert("Post deletado")
 
     })
     .catch((err) => {
-        console.log("erro ao deletar, tente novamente",err)
+      alert("erro ao deletar, tente novamente")
     })
   }
 
