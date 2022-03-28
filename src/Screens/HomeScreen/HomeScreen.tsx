@@ -18,6 +18,23 @@ export default function HomeScreen({navigation}: {navigation: any}) {
 
   },[posts]);
 
+  // requisição para deletar um post
+  const deletePost =(id:number)=>{
+    axios.delete(`${baseUrl}/${id}`, { 
+      })
+      .then((res) => {
+          console.log("Post deletado",res)
+
+    })
+    .catch((err) => {
+        console.log("erro ao deletar, tente novamente",err)
+    })
+  }
+
+  const onClickDeletar =(id:number)=>{
+    deletePost(id);
+  }
+
   // map do estado e estilização
   const dados =  posts.map((post: any) => {
     return (
@@ -27,10 +44,10 @@ export default function HomeScreen({navigation}: {navigation: any}) {
           <Avatar.Image size={24} source={require('../../../assets/avatar.png')} />
           <Title><Text>{post.title}</Text></Title>
           <Text>{post.body}</Text>
-          <Button
+          <Button onPress={() => onClickDeletar(post.id)}
           title="deletar"
           />
-          <Button
+          <Button onPress={() => navigation.navigate('Edit')}
           title="Editar"
           />
         </View>
