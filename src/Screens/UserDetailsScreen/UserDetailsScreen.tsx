@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { Container, StyledName  } from './styles';
 
-import { Avatar, Divider} from 'react-native-paper';
+import { Avatar } from 'react-native-paper';
 
 import axios from 'axios';
 

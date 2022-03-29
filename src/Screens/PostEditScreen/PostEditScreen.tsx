@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, TextInput, Keyboard, TouchableOpacity } from 'react-native';
+import {Text, ScrollView, Keyboard, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { baseUrl } from '../../constants/baseUrl';
 import React, { useState } from 'react';
