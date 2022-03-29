@@ -5,7 +5,7 @@ import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { Container,Title,IconsContainer } from './styles';
+import { Container,Title,IconsContainer,PostContent } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
@@ -55,10 +55,13 @@ export default function HomeScreen({navigation}: {navigation: any}) {
           >
             <Avatar.Image size={64} source={require('../../../assets/avatar.png')}
             />
+            
           </TouchableOpacity>
+            
             <Title><Text>{post.title}</Text></Title>
             <Divider />
-            <Text>{post.body}</Text>
+            <PostContent><Text>{post.body}</Text></PostContent>
+            
 
             <IconsContainer>
               <IconButton onPress={() => onClickDeletar(post.id)}

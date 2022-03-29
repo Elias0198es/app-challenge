@@ -11,10 +11,14 @@ export const Container = styled(View)`
   border: black;
 `;
 
+export const PostContent = styled(Text)`
+  text-align: justify;
+`;
 
 export const Title = styled(Text)`
   margin: 5px;
   color: red;
+  text-align: justify;
 `;
 
 export const IconsContainer = styled(View)`
