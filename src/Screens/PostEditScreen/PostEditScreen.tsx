@@ -1,13 +1,13 @@
-import {Text, ScrollView, Keyboard, TouchableOpacity } from 'react-native';
-import axios from 'axios';
-import { baseUrl } from '../../constants/baseUrl';
 import React, { useState } from 'react';
+import {Text, ScrollView, Keyboard, TouchableOpacity } from 'react-native';
+
+import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
+import { Button } from 'react-native-paper';
+
+import { baseUrl } from '../../constants/baseUrl';
 import { EditRequest } from './_types/EditRequest';
 import { ContentGroup, FormGroup, Input, TitleGroup, ButtonGroup, ContentInput } from './styles';
-
-import { useNavigation } from '@react-navigation/native';
-
-import { Button } from 'react-native-paper';
 
 export default function PostEditScreen({route}: {route: any}) {
   const navigation = useNavigation();
