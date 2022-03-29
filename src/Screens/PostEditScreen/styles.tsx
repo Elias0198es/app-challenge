@@ -41,7 +41,6 @@ export const TitleGroup = styled(View)`
     margin: 10px;
 `;
 
-
 export const ContentGroup = styled(View)`
 	display: flex;
     flex-direction: column;
