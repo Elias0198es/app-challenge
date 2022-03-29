@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Button, Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
@@ -9,6 +9,13 @@ import { Container,Title } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
+  const [isDownPressed, setIsDownPressed] = useState(false);
+  const [isUpPressed, setIsUpPressed] = useState(false);
+
+  const clearThumbState = () => {
+    setIsDownPressed(false)
+    setIsUpPressed(false)
+  }
 
   useEffect(() => {
 
@@ -63,12 +70,15 @@ export default function HomeScreen({navigation}: {navigation: any}) {
           icon="pencil-off"
           />
           <View>
-            <IconButton
-            icon="thumb-up-outline"
+          <TouchableHighlight>
+            <IconButton onPress={() => isDownPressed||isUpPressed? clearThumbState() :  setIsUpPressed(true)}
+            icon={isUpPressed? "thumb-up" : "thumb-up-outline" }
             size={20}
           />
-          <IconButton
-            icon="thumb-down-outline"
+          </TouchableHighlight>
+
+          <IconButton onPress={() => isUpPressed||isDownPressed? clearThumbState() :  setIsDownPressed(true)}
+            icon={isDownPressed? "thumb-down" : "thumb-down-outline" }
             size={20}
           />
           </View>
