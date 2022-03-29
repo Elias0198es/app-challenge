@@ -51,7 +51,6 @@ export default function PostEditScreen({route}: {route: any}) {
           <TextInput
             style={styles.textInput}
             placeholder="Título"
-            // maxLength={100}
             multiline={true}
             onBlur={Keyboard.dismiss}
             value={form.body}
