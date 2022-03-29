@@ -24,9 +24,8 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
       title:body.title, body:body.body, userId:body.userId,
       })
       .then((res) => {
-          alert("Postado!")
-          console.log(res)
-
+        alert("Postado!")
+        console.log(res)
     })
     .catch((err) => {
       alert("erro ao postar, tente novamente")
@@ -40,18 +39,17 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
   return (
     <ScrollView>
       <FormGroup>
-        <TouchableOpacity
-          onPress={onSubmitForm}
-        >
+        <TouchableOpacity>
+
           <TitleGroup>
-          <Text>Título :</Text>
-          <Input
-            placeholder="Título"
-            maxLength={20}
-            onBlur={Keyboard.dismiss}
-            value={form.title}
-            onChangeText={(text)=>{setForm({...form, title:text})}}
-          />
+            <Text>Título :</Text>
+            <Input
+              placeholder="Título"
+              maxLength={20}
+              onBlur={Keyboard.dismiss}
+              value={form.title}
+              onChangeText={(text)=>{setForm({...form, title:text})}}
+            />
           </TitleGroup>
 
           <ContentGroup>
@@ -66,9 +64,18 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
           </ContentGroup>
 
           <ButtonGroup>
-          <Button mode="contained" onPress={()=>onSubmitForm()}>Salvar</Button>
-          <Button mode="outlined" onPress={() => navigation.navigate('Home', {
-          })}>Cancelar</Button>
+            <Button
+              mode="contained"
+              onPress={()=>onSubmitForm()}
+              >
+              Salvar
+            </Button>
+            <Button
+              mode="outlined"
+              onPress={() => navigation.navigate('Home')}
+              >
+              Cancelar
+            </Button>
           </ButtonGroup>
 
         </TouchableOpacity>

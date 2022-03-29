@@ -29,9 +29,6 @@ export default function HomeScreen({navigation}: {navigation: any}) {
         componentMounted = false; 
     }
   }
-
-    
-
   },[posts]);
 
   // requisição para deletar um post
@@ -54,7 +51,6 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   // map do estado e estilização
   const dados =  posts.map((post: any) => {
     return (
-     
       <Container key={post.id}>
         <View>
           <TouchableOpacity
@@ -110,6 +106,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
         onPress={() => navigation.navigate('Register')}
       />
         {dados}
+
     </ScrollView>
   );
 }

@@ -27,7 +27,11 @@ export default function UserDetailsScreen({route}: {route: any}) {
   return (
     <Container>
       <Avatar.Image size={304} source={require('../../../assets/avatar.png')}/>
-      <StyledName><Text>{JSON.stringify(user.name)}</Text></StyledName>
+
+      <StyledName>
+        <Text>{JSON.stringify(user.name)}</Text>
+      </StyledName>
+
       <Text>{JSON.stringify(user.email)}</Text>
     </Container>
   );
