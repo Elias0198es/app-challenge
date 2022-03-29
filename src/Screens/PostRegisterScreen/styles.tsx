@@ -2,12 +2,12 @@ import styled from "styled-components";
 import {TextInput, View} from 'react-native';
 
 export const FormGroup = styled(View)`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-  border-Radius: 10px;
-  border: #680c0c;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    border-Radius: 10px;
+    border: #680c0c;
 `;
 
 export const Input = styled(TextInput)`
@@ -34,7 +34,7 @@ export const ContentInput = styled(TextInput)`
 `;
 
 export const TitleGroup = styled(View)`
-	display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
