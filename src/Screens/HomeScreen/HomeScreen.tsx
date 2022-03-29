@@ -17,11 +17,20 @@ export default function HomeScreen({navigation}: {navigation: any}) {
     setIsUpPressed(false)
   }
 
+  let componentMounted = true;
+
   useLayoutEffect(() => {
 
-    axios.get(`${baseUrl}`).then((response) => {
-      setPosts(response.data)
-    });
+    if (componentMounted){ 
+      axios.get(`${baseUrl}`).then((response) => {
+        setPosts(response.data)
+      })
+      return () => { 
+        componentMounted = false; 
+    }
+  }
+
+    
 
   },[posts]);
 
@@ -104,3 +113,5 @@ export default function HomeScreen({navigation}: {navigation: any}) {
     </ScrollView>
   );
 }
+
+

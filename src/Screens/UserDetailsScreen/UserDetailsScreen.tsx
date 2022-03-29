@@ -10,12 +10,19 @@ import axios from 'axios';
 export default function UserDetailsScreen({route}: {route: any}) {
   const { id } = route.params;
   const [user, setUser] = useState({});
+
+  let componentMounted = true;
+
   useEffect(() => {  
 
+    if (componentMounted){ 
       axios.get(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => {
       setUser(response.data)
-      });
-  
+      })
+      return () => { 
+        componentMounted = false; 
+    }
+  }
   },[user]);
 
   return (
