@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Keyboard, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import axios from 'axios';
 import { baseUrl } from '../../constants/baseUrl';
+import { RegisterRequest } from './_types/RegisterRequest';
 
 export default function PostRegisterScreen() {
 
   const [form, setForm] = useState({title: "", body: "", userId: 67});
 
-  const body  = {
+  const body: RegisterRequest  = {
     title: form.title,
     body: form.body,
     userId: form.userId
