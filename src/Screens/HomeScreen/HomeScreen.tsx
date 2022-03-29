@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 import { Avatar, Divider, IconButton} from 'react-native-paper';
@@ -17,7 +17,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
     setIsUpPressed(false)
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
     axios.get(`${baseUrl}`).then((response) => {
       setPosts(response.data)
