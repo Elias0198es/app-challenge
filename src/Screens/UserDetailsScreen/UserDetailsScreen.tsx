@@ -4,14 +4,13 @@ import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
 
-export default function UserDetailsScreen() {
-  const [user, setUser] = useState([]);
-
+export default function UserDetailsScreen({route}: {route: any}) {
+  const { id } = route.params;
+  const [user, setUser] = useState({});
   useEffect(() => {
 
-    axios.get(`https://jsonplaceholder.typicode.com/users/2`).then((response) => {
+    axios.get(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => {
       setUser(response.data)
-      // console.log(response.data)
     });
 
   },[user]);
@@ -19,6 +18,8 @@ export default function UserDetailsScreen() {
   return (
     <View style={styles.container}>
       <Text>Essa página é a de informações de quem postou!</Text>
+      <Text>{JSON.stringify(user.name)}</Text>
+      <Text>{JSON.stringify(user.email)}</Text>
       <StatusBar style="auto" />
     </View>
   );
