@@ -5,7 +5,7 @@ import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { Container,Title } from './styles';
+import { Container,Title,IconsContainer } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
@@ -48,41 +48,42 @@ export default function HomeScreen({navigation}: {navigation: any}) {
      
       <Container key={post.id}>
         <View>
-        <TouchableOpacity
-        onPress={() => navigation.navigate('Details', {
-          id: post.userId,
-        })}
-        >
-          <Avatar.Image size={24} source={require('../../../assets/avatar.png')}
-          />
-        </TouchableOpacity>
-          <Title><Text>{post.title}</Text></Title>
-          <Divider />
-          <Text>{post.body}</Text>
-          <IconButton onPress={() => onClickDeletar(post.id)}
-          icon="delete-off-outline"
-          />
-          <IconButton onPress={() => navigation.navigate('Edit', {
-            id: post.id,
-            postTitle: post.title,
-            postBody: post.body
+          <TouchableOpacity
+          onPress={() => navigation.navigate('Details', {
+            id: post.userId,
           })}
-          icon="pencil-off"
-          />
-          <View>
-          <TouchableHighlight>
-            <IconButton onPress={() => isDownPressed||isUpPressed? clearThumbState() :  setIsUpPressed(true)}
-            icon={isUpPressed? "thumb-up" : "thumb-up-outline" }
-            size={20}
-          />
-          </TouchableHighlight>
+          >
+            <Avatar.Image size={64} source={require('../../../assets/avatar.png')}
+            />
+          </TouchableOpacity>
+            <Title><Text>{post.title}</Text></Title>
+            <Divider />
+            <Text>{post.body}</Text>
 
-          <IconButton onPress={() => isUpPressed||isDownPressed? clearThumbState() :  setIsDownPressed(true)}
-            icon={isDownPressed? "thumb-down" : "thumb-down-outline" }
-            size={20}
-          />
-          </View>
-    
+            <IconsContainer>
+              <IconButton onPress={() => onClickDeletar(post.id)}
+              icon="delete-off-outline"
+              />
+              <IconButton onPress={() => navigation.navigate('Edit', {
+                id: post.id,
+                postTitle: post.title,
+                postBody: post.body
+              })}
+              icon="pencil-off"
+              />
+              
+              <TouchableHighlight>
+                <IconButton onPress={() => isDownPressed||isUpPressed? clearThumbState() :  setIsUpPressed(true)}
+                icon={isUpPressed? "thumb-up" : "thumb-up-outline" }
+                size={20}
+              />
+              </TouchableHighlight>
+
+              <IconButton onPress={() => isUpPressed||isDownPressed? clearThumbState() :  setIsDownPressed(true)}
+                icon={isDownPressed? "thumb-down" : "thumb-down-outline" }
+                size={20}
+              />
+            </IconsContainer>
         </View>
       </Container>
       

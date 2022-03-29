@@ -16,3 +16,10 @@ export const Title = styled(Text)`
   margin: 5px;
   color: red;
 `;
+
+export const IconsContainer = styled(View)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
