@@ -24,7 +24,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Listagem de posts' }}/>
-          <Stack.Screen name="Details" component={UserDetailsScreen} options={{ title: 'Detalhes do post' }} />
+          <Stack.Screen name="Details" component={UserDetailsScreen} options={{ title: 'Informações do usuário' }} />
           <Stack.Screen name="Edit" component={PostEditScreen} options={{ title: 'Editar Post' }} />
           <Stack.Screen name="Register" component={PostRegisterScreen} options={{ title: 'Cadastro de post' }} />
         </Stack.Navigator>

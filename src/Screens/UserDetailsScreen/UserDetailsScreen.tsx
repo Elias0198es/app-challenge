@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useState, useEffect } from 'react';
+import { Container, StyledName  } from './styles';
+
+import { Avatar, Divider} from 'react-native-paper';
 
 import axios from 'axios';
 
@@ -16,20 +19,12 @@ export default function UserDetailsScreen({route}: {route: any}) {
   },[user]);
 
   return (
-    <View style={styles.container}>
-      <Text>Essa página é a de informações de quem postou!</Text>
-      <Text>{JSON.stringify(user.name)}</Text>
+    <Container>
+      <Avatar.Image size={304} source={require('../../../assets/avatar.png')}/>
+      <StyledName><Text>{JSON.stringify(user.name)}</Text></StyledName>
       <Text>{JSON.stringify(user.email)}</Text>
       <StatusBar style="auto" />
-    </View>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
