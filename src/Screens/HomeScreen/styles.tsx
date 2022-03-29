@@ -3,11 +3,12 @@ import {Text, View} from 'react-native';
 
 export const Container = styled(View)`
   flex: 1;
-  background-color: lightblue;
+  background-color: whitesmoke;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
   border-Radius: 10px;
+  border: black;
 `;
 
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 
-import { Avatar } from 'react-native-paper';
+import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
@@ -50,17 +50,29 @@ export default function HomeScreen({navigation}: {navigation: any}) {
           />
         </TouchableOpacity>
           <Title><Text>{post.title}</Text></Title>
+          <Divider />
           <Text>{post.body}</Text>
-          <Button onPress={() => onClickDeletar(post.id)}
-          title="deletar"
+          <IconButton onPress={() => onClickDeletar(post.id)}
+          icon="delete-off-outline"
           />
-          <Button onPress={() => navigation.navigate('Edit', {
+          <IconButton onPress={() => navigation.navigate('Edit', {
             id: post.id,
             postTitle: post.title,
             postBody: post.body
           })}
-          title="Editar"
+          icon="pencil-off"
           />
+          <View>
+            <IconButton
+            icon="thumb-up-outline"
+            size={20}
+          />
+          <IconButton
+            icon="thumb-down-outline"
+            size={20}
+          />
+          </View>
+    
         </View>
       </Container>
       
@@ -69,10 +81,9 @@ export default function HomeScreen({navigation}: {navigation: any}) {
 
   return (
     <ScrollView >
-      <Text>Essa página é a Home Screen!</Text>
 
-      <Button
-        title="Cadastrar um post"
+      <IconButton
+        icon="pencil-plus"
         onPress={() => navigation.navigate('Register')}
       />
         {dados}
