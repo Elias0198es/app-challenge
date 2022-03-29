@@ -1,10 +1,16 @@
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, TextInput, Keyboard, TouchableOpacity  } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View, ScrollView, TextInput, Keyboard, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { baseUrl } from '../../constants/baseUrl';
 import React, { useState } from 'react';
 import { EditRequest } from './_types/EditRequest';
+import { ContentGroup, FormGroup, Input, TitleGroup, ButtonGroup, ContentInput } from './styles';
+
+import { useNavigation } from '@react-navigation/native';
+
+import { Button } from 'react-native-paper';
 
 export default function PostEditScreen({route}: {route: any}) {
+  const navigation = useNavigation();
   const { id, postTitle, postBody } = route.params;
 
   const [form, setForm] = useState({title: postTitle, body:postBody});
@@ -29,66 +35,46 @@ export default function PostEditScreen({route}: {route: any}) {
     })
   }
 
-  const onSubmitForm = (event:any) => {
+  const onSubmitForm = () => {
     editPost(id)
 }
 
   return (
     <ScrollView>
-      <View style={styles.inputContainer}>
+      <FormGroup>
       <TouchableOpacity
-        style={styles.saveButton}
-        onPress={onSubmitForm}
       >
-          <TextInput
-            style={styles.textInput}
+          <TitleGroup>
+          <Text>Novo Título :</Text>
+          <Input
             placeholder="Título"
             maxLength={20}
             onBlur={Keyboard.dismiss}
             value={form.title}
             onChangeText={(text)=>{setForm({...form, title:text})}}
           />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Título"
+          </TitleGroup>
+
+          <ContentGroup>
+          <Text>Conteúdo :</Text>
+          <ContentInput
+            placeholder="Conteúdo do post"
             multiline={true}
             onBlur={Keyboard.dismiss}
             value={form.body}
             onChangeText={(text)=>{setForm({...form, body:text})}}
           />
-          <Text style={styles.saveButtonText}>Salvar</Text>
+          </ContentGroup>
+
+          <ButtonGroup>
+          <Button mode="contained" onPress={()=>onSubmitForm()}>Salvar</Button>
+          <Button mode="outlined" onPress={() => navigation.navigate('Home', {
+          })}>Cancelar</Button>
+          </ButtonGroup>
         </TouchableOpacity>
-      </View>
+      </FormGroup>
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  inputContainer: {
-    paddingTop: 15
-  },
-  textInput: {
-    borderColor: '#CCCCCC',
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    height: 50,
-    fontSize: 25,
-    paddingLeft: 20,
-    paddingRight: 20
-  },
-  textHeight:{
-    maxHeight: 80},
-  saveButton: {
-    borderWidth: 1,
-    borderColor: '#007BFF',
-    backgroundColor: '#007BFF',
-    padding: 15,
-    margin: 5
-  },
-  saveButtonText: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    textAlign: 'center'
-  }
-});
 
