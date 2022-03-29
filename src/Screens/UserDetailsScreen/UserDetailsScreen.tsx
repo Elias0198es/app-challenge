@@ -7,12 +7,12 @@ import axios from 'axios';
 export default function UserDetailsScreen({route}: {route: any}) {
   const { id } = route.params;
   const [user, setUser] = useState({});
-  useEffect(() => {
+  useEffect(() => {  
 
-    axios.get(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => {
+      axios.get(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => {
       setUser(response.data)
-    });
-
+      });
+  
   },[user]);
 
   return (
