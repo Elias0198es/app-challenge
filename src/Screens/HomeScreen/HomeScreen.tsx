@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
@@ -33,7 +33,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
           alert("Post deletado")
 
     })
-    .catch((err) => {
+    .catch(() => {
       alert("erro ao deletar, tente novamente")
     })
   }
