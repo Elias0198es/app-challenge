@@ -1,16 +1,18 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 
 import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { Container,Title,IconsContainer,PostContent } from './styles';
+import { Container,Title,IconsContainer,PostContent,LoadingContainer } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
   const [isDownPressed, setIsDownPressed] = useState(false);
   const [isUpPressed, setIsUpPressed] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const clearThumbState = () => {
     setIsDownPressed(false)
@@ -23,6 +25,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
 
     if (componentMounted){ 
       axios.get(`${baseUrl}`).then((response) => {
+        setLoading(false);
         setPosts(response.data)
       })
       return () => { 
@@ -108,7 +111,11 @@ export default function HomeScreen({navigation}: {navigation: any}) {
         icon="pencil-plus"
         onPress={() => navigation.navigate('Register')}
       />
+        
         {dados}
+
+        {/* enquanto a requisição axios finaliza carrego um loading para o usuário */}
+        <View>{loading? <ActivityIndicator size={'large'} color={"tomato"} /> : <View/>  }</View>
 
     </ScrollView>
   );

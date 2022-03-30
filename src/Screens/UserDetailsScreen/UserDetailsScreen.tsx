@@ -1,5 +1,6 @@
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import React, { useState, useEffect, useRef } from 'react';
+import { ActivityIndicator } from 'react-native';
 
 import { Avatar, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -12,19 +13,19 @@ export default function UserDetailsScreen({route}: {route: any}) {
   const { id } = route.params;
   const [user, setUser] = useState({});
   const componentMounted = useRef(true);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect( () => {  
-    setLoading(true);
 
     if (componentMounted.current){ 
       axios.get(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => {
+      setLoading(false);
       setUser(response.data)
       })
-  } return () => { 
+    } return () => { 
     componentMounted.current = false; 
-}
-
+    }
+    
   },[user]);
 
   return (
@@ -34,6 +35,9 @@ export default function UserDetailsScreen({route}: {route: any}) {
       <StyledName>
         <Text>{JSON.stringify(user.name)}</Text>
       </StyledName>
+
+      {/* enquanto a requisição axios não termina carrego um loading para o usuário */}
+      <View>{loading? <ActivityIndicator color={"tomato"} /> : <View/>  }</View>
 
       <Text>{JSON.stringify(user.email)}</Text>
 

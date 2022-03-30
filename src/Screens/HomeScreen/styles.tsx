@@ -27,3 +27,10 @@ export const IconsContainer = styled(View)`
   align-items: center;
   justify-content: center;
 `;
+
+export const LoadingContainer = styled(View)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
