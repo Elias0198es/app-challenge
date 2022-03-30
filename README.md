@@ -4,7 +4,7 @@
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=IN%20PROGRESS&color=GREEN&style=for-the-badge)
 <a href="https://github.com/Elias0198es/app-challenge/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Elias0198es/app-challenge?style=for-the-badge"></a>
 ![implementation](http://img.shields.io/static/v1?label=FUTURE%20IMPLEMENTATIONS&message=PAGINATION%20AND%20LAYOUT%20UPGRADE&color=GREEN&style=for-the-badge)
-![releaase](http://img.shields.io/static/v1?label=RELEASE%20DATE&message=MARCH%2022&color=GREEN&style=for-the-badge)
+![releaase](http://img.shields.io/static/v1?label=RELEASE%20DATE&message=MARCH%202022&color=GREEN&style=for-the-badge)
 
 ## Descrição do Projeto
 
