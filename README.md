@@ -9,7 +9,7 @@
 ## Descrição do Projeto
 
 Aplicativo que consome uma fake API(CickPosts) e realiza um CRUD da mesma. O link da API pode ser encontrado
-<a href="https://jsonplaceholder.typicode.com/" target="blank">aqui</a>
+<a href="https://jsonplaceholder.typicode.com/" target="_blank">aqui</a>
  
 
 ## :hammer: Funcionalidades do projeto
@@ -25,7 +25,7 @@ https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-
 ## 📁 Acesso ao projeto
 
 Caso queira baixar o apk, disponibilizo a atual versão no seguinte
-<a href="https://www.dropbox.com/s/bd10o8w6nhv720v/my-app-ad93839a975940cc981c05e50ffbd916-signed.apk?dl=0" target="blank">link</a>
+<a href="https://www.dropbox.com/s/bd10o8w6nhv720v/my-app-ad93839a975940cc981c05e50ffbd916-signed.apk?dl=0" target="_blank">link</a>
 
 **Voê pode rodar o projeto na sua máquina também!, para isso, basta clonar este repositório e ter o ambiente para executar a aplicação (Passo a passo logo abaixo)**
 
@@ -38,7 +38,7 @@ Para que o projeto seja executado com êxito você deve possuir
 3. Aplicativo Expo
 
 Você pode consultar a documentação do Expo
-<a href="https://docs.expo.dev/get-started/installation/" target="blank">aqui</a>
+<a href="https://docs.expo.dev/get-started/installation/" target="_blank">aqui</a>
 
 
 ## ✔️ Linguagens e tecnologias utilizadas
