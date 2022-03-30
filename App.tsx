@@ -2,10 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
-import HomeScreen from './src/Screens/HomeScreen/HomeScreen';
-import UserDetailsScreen from './src/Screens/UserDetailsScreen/UserDetailsScreen';
-import PostEditScreen from './src/Screens/PostEditScreen/PostEditScreen';
-import PostRegisterScreen from './src/Screens/PostRegisterScreen/PostRegisterScreen';
+import HomeScreen from './src/screens/homeScreen/homeScreen';
+import UserDetailsScreen from './src/screens/userDetailsScreen/userDetailsScreen';
+import PostEditScreen from './src/screens/postEditScreen/postEditScreen';
+import PostRegisterScreen from './src/screens/postRegisterScreen/postRegisterScreen';
 
 const theme = {
   ...DefaultTheme,
