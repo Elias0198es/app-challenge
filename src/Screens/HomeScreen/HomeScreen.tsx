@@ -57,9 +57,9 @@ export default function HomeScreen({navigation}: {navigation: any}) {
       <Container key={post.id}>
         <View>
           <TouchableOpacity
-          onPress={() => navigation.navigate('Details', {
-            id: post.userId,
-          })}
+            onPress={() => navigation.navigate('Details', {
+              id: post.userId,
+            })}
           >
             <Avatar.Image size={64} source={require('../../../assets/avatar.png')}
             />

@@ -10,7 +10,7 @@ import { EditRequest } from './_types/EditRequest';
 import { ContentGroup, FormGroup, Input, TitleGroup, ButtonGroup, ContentInput } from './styles';
 
 export default function PostEditScreen({route}: {route: any}) {
-  const navigation = useNavigation();
+  const navigation : any = useNavigation();
   const { id, postTitle, postBody } = route.params;
 
   const [form, setForm] = useState({title: postTitle, body:postBody});
@@ -27,7 +27,7 @@ export default function PostEditScreen({route}: {route: any}) {
       })
       .then((res) => {
         alert("Post Alterado")
-        console.log(res)
+        navigation.push('Home')
     })
     .catch((err) => {
       alert("erro ao alterar post, tente novamente")

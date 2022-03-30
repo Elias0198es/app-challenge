@@ -25,7 +25,7 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
       })
       .then((res) => {
         alert("Postado!")
-        console.log(res)
+        navigation.push('Home')
     })
     .catch((err) => {
       alert("erro ao postar, tente novamente")
