@@ -29,9 +29,9 @@ Caso queira baixar o apk, disponibilizo a atual versão no seguinte
 
 **Voê pode rodar o projeto na sua máquina também!, para isso, basta clonar este repositório e ter o ambiente para executar a aplicação (Passo a passo logo abaixo)**
 
-Dentro do Projeto realize os comandos 
-1. Npm install 
-2. Expo start 
+Dentro do Projeto realize via terminal os comandos na sequência
+1. npm install 
+2. expo start 
 
 ## 🛠️ Executando o projeto
 
