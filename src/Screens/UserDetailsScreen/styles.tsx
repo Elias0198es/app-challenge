@@ -16,3 +16,13 @@ export const StyledName = styled(Text)`
   font-weight: bold;
   font-size: 20px;
 `;
+
+
+export const BackButtonContainer = styled(View)`
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
