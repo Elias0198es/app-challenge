@@ -6,7 +6,7 @@
 ![implementation](http://img.shields.io/static/v1?label=FUTURE%20IMPLEMENTATIONS&message=PAGINATION%20AND%20LAYOUT%20UPGRADE&color=GREEN&style=for-the-badge)
 ![releaase](http://img.shields.io/static/v1?label=RELEASE%20DATE&message=MARCH%202022&color=GREEN&style=for-the-badge)
 
-## Descrição do Projeto
+## :scroll: Descrição do Projeto
 
 Aplicativo que consome uma fake API(ClickPosts) e realiza um CRUD da mesma. O link da API pode ser encontrado
 <a href="https://jsonplaceholder.typicode.com/" target="_blank">aqui</a>
@@ -22,12 +22,21 @@ Aplicativo que consome uma fake API(ClickPosts) e realiza um CRUD da mesma. O li
 
 https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-b9c0-dc2d50328739.mp4
 
+## :rocket: Futuras Implementações Previstas
+
+1. Loading icon deve ser carregado no centro da tela da HomeScreen ao invés do topo da tela
+2. Paginação dos posts para carregar alguns por vez na tela
+3. Ação do icone ThumbsUp/ThumbsDown (like e deslike), deve refletir para um post individualmente ao invés de todos
+4. Trocar Alert de mensagem de êxito ou falha de uma requisição para Snackbar
+5. Alinhar melhor os cards dos post para que todos estejam iguais (conteúdo interno)
+
+
 ## 📁 Acesso ao projeto
 
-Caso queira baixar o apk, disponibilizo a atual versão no seguinte
+Caso queira baixar o apk, disponibilizo última versão no seguinte
 <a href="https://www.dropbox.com/s/bd10o8w6nhv720v/my-app-ad93839a975940cc981c05e50ffbd916-signed.apk?dl=0" target="_blank">link</a>
 
-**Você pode rodar o projeto na sua máquina também!, para isso basta clonar este repositório e ter o ambiente para executar a aplicação (Passo a passo logo abaixo)**
+**Você pode rodar o projeto na sua máquina também! Para isso, basta clonar este repositório e ter o ambiente para executar a aplicação (Passo a passo logo abaixo)**
 
 Dentro do Projeto realize via terminal os comandos na sequência
 1. npm install 
