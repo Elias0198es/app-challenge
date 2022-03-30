@@ -27,7 +27,7 @@ https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-
 Caso queira baixar o apk, disponibilizo a atual versão no seguinte
 <a href="https://www.dropbox.com/s/bd10o8w6nhv720v/my-app-ad93839a975940cc981c05e50ffbd916-signed.apk?dl=0" target="_blank">link</a>
 
-**Você pode rodar o projeto na sua máquina também!, para iss basta clonar este repositório e ter o ambiente para executar a aplicação (Passo a passo logo abaixo)**
+**Você pode rodar o projeto na sua máquina também!, para isso basta clonar este repositório e ter o ambiente para executar a aplicação (Passo a passo logo abaixo)**
 
 Dentro do Projeto realize via terminal os comandos na sequência
 1. npm install 
@@ -35,7 +35,7 @@ Dentro do Projeto realize via terminal os comandos na sequência
 
 ## 🛠️ Executando o projeto
 
-Para que o projeto seja executado com êxito, você deve possuir
+**Para que o projeto seja executado com êxito, você deve possuir**
 
 1. Node.js LTS release
 2. Expo CLI
