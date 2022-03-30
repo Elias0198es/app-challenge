@@ -25,6 +25,7 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
       })
       .then((res) => {
         alert("Postado!")
+        setForm({...form, body:"", title:""})
         navigation.push('Home')
     })
     .catch((err) => {
