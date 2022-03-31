@@ -24,11 +24,10 @@ https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-
 
 ## :rocket: Futuras Implementações Previstas
 
-1. Loading icon deve ser carregado no centro da tela da HomeScreen ao invés do topo da tela
-2. Paginação dos posts para carregar alguns por vez na tela
-3. Ação do icone ThumbsUp/ThumbsDown (like e deslike), deve refletir para um post individualmente ao invés de todos
-4. Trocar Alert de mensagem de êxito ou falha de uma requisição para Snackbar
-5. Alinhar conteúdo interno dos posts para manter alinhamento e padrão
+1. Paginação dos posts para carregar alguns por vez na tela
+2. Ação do icone ThumbsUp/ThumbsDown (like e deslike), deve refletir para um post individualmente ao invés de todos
+3. Trocar Alert de mensagem de êxito ou falha de uma requisição para Snackbar
+4. Alinhar conteúdo interno dos posts para manter alinhamento e padrão
 
 
 ## 📁 Acesso ao projeto
