@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Keyboard, ScrollView, Text, TouchableOpacity } from 'react-native';
+import { Keyboard, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 import axios from 'axios';
 import { Button } from 'react-native-paper';
@@ -38,7 +38,7 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
   }
 
   return (
-    <ScrollView>
+    <View style={{height: "100%"}}>
       <FormGroup>
         <TouchableOpacity>
 
@@ -81,7 +81,7 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
 
         </TouchableOpacity>
       </FormGroup>
-    </ScrollView>
+    </View>
   );
 }
 
