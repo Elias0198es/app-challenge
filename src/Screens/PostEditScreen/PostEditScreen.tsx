@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Text, ScrollView, Keyboard, TouchableOpacity } from 'react-native';
+import {Text, Keyboard, TouchableOpacity, View } from 'react-native';
 
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
@@ -39,7 +39,7 @@ export default function PostEditScreen({route}: {route: any}) {
   }
 
   return (
-    <ScrollView>
+    <View style={{height: "100%"}}>
       <FormGroup>
         <TouchableOpacity>
 
@@ -83,7 +83,7 @@ export default function PostEditScreen({route}: {route: any}) {
           
         </TouchableOpacity>
       </FormGroup>
-    </ScrollView>
+    </View>
   );
 }
 

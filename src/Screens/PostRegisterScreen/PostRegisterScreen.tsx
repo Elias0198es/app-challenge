@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Keyboard, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Keyboard, Text, TouchableOpacity, View } from 'react-native';
 
 import axios from 'axios';
 import { Button } from 'react-native-paper';
