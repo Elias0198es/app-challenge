@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {Text, View} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
+
 
 export const Container = styled(View)`
   flex: 1;
@@ -29,8 +30,16 @@ export const IconsContainer = styled(View)`
 `;
 
 export const LoadingContainer = styled(View)`
-  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
+
+export const EmptyContainer = styled(View)`
+  display:none;
+`;
+
+export const PostsContainer = styled(ScrollView)`
+  margin-bottom: 50px;
+`;
+

@@ -6,7 +6,7 @@ import { Avatar, Divider, IconButton} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { Container,Title,IconsContainer,PostContent,LoadingContainer } from './styles';
+import { Container, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
@@ -105,19 +105,21 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   });
 
   return (
-    <ScrollView >
+    <View>
 
       <IconButton
         icon="pencil-plus"
         onPress={() => navigation.navigate('Register')}
       />
-        
+        {/* Abaixo uso os ternários para fazer um componente desaparecer enquanto outro rendeeriza e vice-versa*/}
+        <PostsContainer style={{display: loading? "none"  : "flex"}}>
         {dados}
+        </PostsContainer>
 
-        {/* enquanto a requisição axios finaliza carrego um loading para o usuário */}
-        <View>{loading? <ActivityIndicator size={'large'} color={"tomato"} /> : <View/>  }</View>
+        {/* enquanto a requisição axios finaliza carrego um loading para o usuário*/}
+        <LoadingContainer style={{height: "100%", display: loading? "flex"  : "none" }}>{loading? <ActivityIndicator size={'large'} color={"tomato"} /> : <EmptyContainer/>  }</LoadingContainer>
 
-    </ScrollView>
+    </View>
   );
 }
 
