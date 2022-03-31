@@ -56,16 +56,21 @@ Você pode consultar a documentação do Expo
 
 ## ✔️ Linguagens e tecnologias utilizadas
 
-![image](https://user-images.githubusercontent.com/62041104/160782145-bc93639b-bfa7-46a2-aec1-b6a0e75ad9fa.png)
-![image](https://user-images.githubusercontent.com/62041104/160781835-a594031b-5d6a-4e01-9e26-8ae52e1c31c7.png)
-![image](https://user-images.githubusercontent.com/62041104/160781907-2257791f-f279-4b04-b918-7f82e0922c55.png)
-![image](https://user-images.githubusercontent.com/62041104/160782689-acb63d0e-0d26-4b25-b832-dc3ea2e8bd73.png)
-![image](https://user-images.githubusercontent.com/62041104/160782282-6921fae3-1bef-42f5-9d65-6448b2dd3e80.png)
-![image](https://user-images.githubusercontent.com/62041104/160783371-478f1615-3bd1-4226-aaba-8dbaa3ccf2e5.png)
+<div style="display: inline_block">
+ <br>
+ <img align="center" alt="Elias-HTML" height="45" width="40" src="https://user-images.githubusercontent.com/62041104/160782145-bc93639b-bfa7-46a2-aec1-b6a0e75ad9fa.png">
 
+<img align="center" alt="Elias-HTML" height="45" width="40" src="https://user-images.githubusercontent.com/62041104/160781835-a594031b-5d6a-4e01-9e26-8ae52e1c31c7.png">
 
+<img align="center" alt="Elias-HTML" height="45" width="40" src="https://user-images.githubusercontent.com/62041104/160781907-2257791f-f279-4b04-b918-7f82e0922c55.png">
 
+<img align="center" alt="Elias-HTML" height="45" width="40" src="https://user-images.githubusercontent.com/62041104/160782689-acb63d0e-0d26-4b25-b832-dc3ea2e8bd73.png">
 
+<img align="center" alt="Elias-HTML" height="45" width="40" src="https://user-images.githubusercontent.com/62041104/160782282-6921fae3-1bef-42f5-9d65-6448b2dd3e80.png">
+
+<img align="center" alt="Elias-HTML" height="45" width="40" src="https://user-images.githubusercontent.com/62041104/160783371-478f1615-3bd1-4226-aaba-8dbaa3ccf2e5.png">
+
+</div>
 
 
 
