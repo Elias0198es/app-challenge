@@ -26,8 +26,7 @@ https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-
 
 1. Paginação dos posts para carregar alguns por vez na tela
 2. Ação do icone ThumbsUp/ThumbsDown (like e deslike), deve refletir para um post individualmente ao invés de todos
-3. Trocar Alert de mensagem de êxito ou falha de uma requisição para Snackbar
-4. Alinhar conteúdo interno dos posts para manter alinhamento e padrão
+3. Alinhar conteúdo interno dos posts para manter alinhamento e padrão
 
 
 ## 📁 Acesso ao projeto
