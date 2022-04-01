@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Keyboard, Text, TouchableOpacity, View } from 'react-native';
 
 import axios from 'axios';
-import { Button } from 'react-native-paper';
+import { Button, Snackbar } from 'react-native-paper';
 
 import { baseUrl } from '../../constants/baseUrl';
 import { RegisterRequest } from './_types/RegisterRequest';
@@ -11,7 +11,11 @@ import { ContentGroup, FormGroup, Input, TitleGroup, ButtonGroup, ContentInput }
 export default function PostRegisterScreen({navigation}: {navigation: any}) {
 
   const [form, setForm] = useState({title: "", body: "", userId: 67});
+  const [visible, setVisible] = useState(false);
 
+  const onToggleSnackBar = () => setVisible(!visible);
+  const onDismissSnackBar = () => setVisible(false);
+  
   const body: RegisterRequest  = {
     title: form.title,
     body: form.body,
@@ -24,9 +28,11 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
       title:body.title, body:body.body, userId:body.userId,
       })
       .then((res) => {
-        alert("Postado!")
         setForm({...form, body:"", title:""})
-        navigation.push('Home')
+        onToggleSnackBar()
+        setTimeout(() => {
+          navigation.push('Home');
+        }, 3000);
     })
     .catch((err) => {
       alert("erro ao postar, tente novamente")
@@ -80,6 +86,16 @@ export default function PostRegisterScreen({navigation}: {navigation: any}) {
           </ButtonGroup>
 
         </TouchableOpacity>
+
+        <Snackbar
+          visible={visible}
+          onDismiss={()=>onDismissSnackBar()}
+          theme={{ colors: { onSurface: "#6DFF83", surface: "black", }}}
+          duration={2000}
+          >
+          Postado!
+        </Snackbar>
+
       </FormGroup>
     </View>
   );

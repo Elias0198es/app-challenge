@@ -1,18 +1,23 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
-import { Avatar, Divider, IconButton} from 'react-native-paper';
+import { Avatar, Divider, IconButton, Snackbar} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { Container, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
+import { Container, ScreenContainer, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
   const [isDownPressed, setIsDownPressed] = useState(false);
   const [isUpPressed, setIsUpPressed] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [visible, setVisible] = useState(false);
+
+  const onToggleSnackBar = () => setVisible(!visible);
+  const onDismissSnackBar = () => setVisible(false);
+  
 
   const clearThumbState = () => {
     setIsDownPressed(false)
@@ -39,9 +44,8 @@ export default function HomeScreen({navigation}: {navigation: any}) {
     axios.delete(`${baseUrl}/${id}`, { 
       })
       .then(() => {
-          alert("Post deletado")
-
-    })
+        onToggleSnackBar()
+      })
     .catch(() => {
       alert("erro ao deletar, tente novamente")
     })
@@ -98,6 +102,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
               size={20}
             />
           </IconsContainer>
+
         </View>
       </Container>
       
@@ -105,21 +110,38 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   });
 
   return (
-    <View>
+    <ScreenContainer>
 
       <IconButton
         icon="pencil-plus"
         onPress={() => navigation.navigate('Register')}
       />
+
         {/* Abaixo uso os ternários para fazer um componente desaparecer enquanto outro rendeeriza e vice-versa*/}
+        
         <PostsContainer style={{display: loading? "none"  : "flex"}}>
-        {dados}
+          {dados}
         </PostsContainer>
 
         {/* enquanto a requisição axios finaliza carrego um loading para o usuário*/}
         <LoadingContainer style={{height: "100%", display: loading? "flex"  : "none" }}>{loading? <ActivityIndicator size={'large'} color={"tomato"} /> : <EmptyContainer/>  }</LoadingContainer>
 
-    </View>
+        <Snackbar style={{position: "absolute", bottom: 0}}
+          visible={visible}
+          onDismiss={()=>onDismissSnackBar()}
+          theme={{ colors: { onSurface: "#6DFF83", surface: "black", }}}
+          duration={2000}
+          action={{
+            label: 'OK',
+            onPress: () => {
+              onDismissSnackBar()
+            },
+          }}
+          >
+          Post deletado!
+        </Snackbar>
+
+    </ScreenContainer>
   );
 }
 

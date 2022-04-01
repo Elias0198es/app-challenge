@@ -3,7 +3,7 @@ import {Text, Keyboard, TouchableOpacity, View } from 'react-native';
 
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import { Button } from 'react-native-paper';
+import { Button, Snackbar } from 'react-native-paper';
 
 import { baseUrl } from '../../constants/baseUrl';
 import { EditRequest } from './_types/EditRequest';
@@ -14,7 +14,11 @@ export default function PostEditScreen({route}: {route: any}) {
   const { id, postTitle, postBody } = route.params;
 
   const [form, setForm] = useState({title: postTitle, body:postBody});
+  const [visible, setVisible] = useState(false);
 
+  const onToggleSnackBar = () => setVisible(!visible);
+  const onDismissSnackBar = () => setVisible(false);
+  
   const body : EditRequest = {
     title: form.title,
     body: form.body,
@@ -26,8 +30,10 @@ export default function PostEditScreen({route}: {route: any}) {
       title:body.title, body:body.body,
       })
       .then((res) => {
-        alert("Post Alterado")
-        navigation.push('Home')
+        onToggleSnackBar()
+        setTimeout(() => {
+          navigation.push('Home');
+        }, 3000);
     })
     .catch((err) => {
       alert("erro ao alterar post, tente novamente")
@@ -82,6 +88,16 @@ export default function PostEditScreen({route}: {route: any}) {
           </ButtonGroup>
           
         </TouchableOpacity>
+
+        <Snackbar
+          visible={visible}
+          onDismiss={()=>onDismissSnackBar()}
+          theme={{ colors: { onSurface: "#6DFF83", surface: "black", }}}
+          duration={2000}
+          >
+          Post alterado!
+        </Snackbar>
+
       </FormGroup>
     </View>
   );
