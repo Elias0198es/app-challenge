@@ -6,6 +6,7 @@ import HomeScreen from './src/screens/homeScreen/homeScreen';
 import UserDetailsScreen from './src/screens/userDetailsScreen/userDetailsScreen';
 import PostEditScreen from './src/screens/postEditScreen/postEditScreen';
 import PostRegisterScreen from './src/screens/postRegisterScreen/postRegisterScreen';
+import Header from './src/components/header/header';
 
 const theme = {
   ...DefaultTheme,
@@ -21,12 +22,13 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <PaperProvider theme={theme}>
+      <Header/>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Listagem de posts' }}/>
-          <Stack.Screen name="Details" component={UserDetailsScreen} options={{ title: 'Informações do usuário' }} />
-          <Stack.Screen name="Edit" component={PostEditScreen} options={{ title: 'Editar Post' }} />
-          <Stack.Screen name="Register" component={PostRegisterScreen} options={{ title: 'Cadastro de post' }} />
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Details" component={UserDetailsScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Edit" component={PostEditScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Register" component={PostRegisterScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
