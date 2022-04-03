@@ -1,12 +1,12 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
 import { Avatar, Divider, IconButton, Snackbar} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { Container, ScreenContainer, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
+import { CardContainer, CardContent,MapContainer, ScreenContainer, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
@@ -18,7 +18,6 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   const onToggleSnackBar = () => setVisible(!visible);
   const onDismissSnackBar = () => setVisible(false);
   
-
   const clearThumbState = () => {
     setIsDownPressed(false)
     setIsUpPressed(false)
@@ -55,57 +54,58 @@ export default function HomeScreen({navigation}: {navigation: any}) {
     deletePost(id);
   }
 
-  // map do estado e estilização
   const dados =  posts.map((post: any) => {
     return (
-      <Container key={post.id}>
-        <View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Details', {
-              id: post.userId,
-            })}
-          >
-            <Avatar.Image size={64} source={require('../../../assets/avatar.png')}
-            />
-            
-          </TouchableOpacity>
-            
-          <Title><Text>{post.title}</Text></Title>
+      <MapContainer key={post.id}>
+        <CardContainer>
+          <CardContent>
 
-          <Divider />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Details', {
+                id: post.userId,
+              })}
+            >
+              <Avatar.Image size={64} source={require('../../../assets/avatar.png')}
+              />
+            </TouchableOpacity>
+              
+            <Title>
+              <Text>{post.title}</Text>
+            </Title>
 
-          <PostContent>
-            <Text>{post.body}</Text>
-          </PostContent>
+            <Divider />
 
-          <IconsContainer>
-            <IconButton onPress={() => onClickDeletar(post.id)}
-            icon="delete-off-outline"
-            />
-            <IconButton onPress={() => navigation.navigate('Edit', {
-              id: post.id,
-              postTitle: post.title,
-              postBody: post.body
-            })}
-            icon="pencil-off"
-            />
-            
-            <TouchableHighlight>
+            <PostContent>
+              <Text>{post.body}</Text>
+            </PostContent>
+
+            <IconsContainer>
+              <IconButton onPress={() => onClickDeletar(post.id)}
+              icon="delete-off-outline"
+              />
+
+              <IconButton onPress={() => navigation.navigate('Edit', {
+                id: post.id,
+                postTitle: post.title,
+                postBody: post.body
+                })}
+                icon="pencil-off"
+              />
+
               <IconButton onPress={() => isDownPressed||isUpPressed? clearThumbState() :  setIsUpPressed(true)}
               icon={isUpPressed? "thumb-up" : "thumb-up-outline" }
               size={20}
-            />
-            </TouchableHighlight>
+              />
+        
+              <IconButton onPress={() => isUpPressed||isDownPressed? clearThumbState() :  setIsDownPressed(true)}
+                icon={isDownPressed? "thumb-down" : "thumb-down-outline" }
+                size={20}
+              />
+            </IconsContainer>
 
-            <IconButton onPress={() => isUpPressed||isDownPressed? clearThumbState() :  setIsDownPressed(true)}
-              icon={isDownPressed? "thumb-down" : "thumb-down-outline" }
-              size={20}
-            />
-          </IconsContainer>
-
-        </View>
-      </Container>
-      
+          </CardContent>
+        </CardContainer>
+      </MapContainer>
       )
   });
 
