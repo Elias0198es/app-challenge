@@ -7,4 +7,6 @@ export const MenuIconsContainer = styled(View)`
   align-items: center;
   justify-content: center;
   max-height: 50px;
+  /* border: 1px solid tomato; */
+  background-color: tomato;
 `;

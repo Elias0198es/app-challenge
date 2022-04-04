@@ -1,12 +1,12 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
 import { Avatar, Divider, IconButton, Snackbar} from 'react-native-paper';
 import axios from 'axios';
 
 import { baseUrl } from '../../constants/baseUrl';
-import { CardContainer, CardContent,MapContainer, ScreenContainer, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
+import { CardContainer, CardContent,MapContainer, Title, IconsContainer, PostContent, LoadingContainer,  EmptyContainer, PostsContainer } from './styles';
 
 export default function HomeScreen({navigation}: {navigation: any}) {
   const [posts, setPosts] = useState([]);
@@ -110,7 +110,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   });
 
   return (
-    <ScreenContainer>
+    <View>
 
       {/* Abaixo uso os ternários para fazer um componente desaparecer enquanto outro rendeeriza e vice-versa*/}
       
@@ -136,7 +136,7 @@ export default function HomeScreen({navigation}: {navigation: any}) {
         Post deletado!
       </Snackbar>
 
-    </ScreenContainer>
+    </View>
   );
 }
 

@@ -42,12 +42,10 @@ export const EmptyContainer = styled(View)`
 `;
 
 export const PostsContainer = styled(ScrollView)`
-  margin-bottom: 50px;
   flex-direction: column;
 `;
 
 export const ScreenContainer = styled(View)`
-  margin-bottom: 50px;
 `;
 
 // View da parte interna do Card

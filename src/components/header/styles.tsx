@@ -8,6 +8,3 @@ export const HeaderIconsContainer = styled(View)`
   justify-content: space-between;
 `;
 
-
-export const IconContainer = styled(View)`
-`;
