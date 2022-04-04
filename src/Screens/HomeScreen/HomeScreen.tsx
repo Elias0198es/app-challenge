@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
 import { Avatar, Divider, IconButton, Snackbar} from 'react-native-paper';
@@ -112,34 +112,29 @@ export default function HomeScreen({navigation}: {navigation: any}) {
   return (
     <ScreenContainer>
 
-      <IconButton
-        icon="pencil-plus"
-        onPress={() => navigation.navigate('Register')}
-      />
+      {/* Abaixo uso os ternários para fazer um componente desaparecer enquanto outro rendeeriza e vice-versa*/}
+      
+      <PostsContainer style={{display: loading? "none"  : "flex"}}>
+        {dados}
+      </PostsContainer>
 
-        {/* Abaixo uso os ternários para fazer um componente desaparecer enquanto outro rendeeriza e vice-versa*/}
-        
-        <PostsContainer style={{display: loading? "none"  : "flex"}}>
-          {dados}
-        </PostsContainer>
+      {/* enquanto a requisição axios finaliza carrego um loading para o usuário*/}
+      <LoadingContainer style={{height: "100%", display: loading? "flex"  : "none" }}>{loading? <ActivityIndicator size={'large'} color={"tomato"} /> : <EmptyContainer/>  }</LoadingContainer>
 
-        {/* enquanto a requisição axios finaliza carrego um loading para o usuário*/}
-        <LoadingContainer style={{height: "100%", display: loading? "flex"  : "none" }}>{loading? <ActivityIndicator size={'large'} color={"tomato"} /> : <EmptyContainer/>  }</LoadingContainer>
-
-        <Snackbar style={{position: "absolute", bottom: 0}}
-          visible={visible}
-          onDismiss={()=>onDismissSnackBar()}
-          theme={{ colors: { onSurface: "#6DFF83", surface: "black", }}}
-          duration={2000}
-          action={{
-            label: 'OK',
-            onPress: () => {
-              onDismissSnackBar()
-            },
-          }}
-          >
-          Post deletado!
-        </Snackbar>
+      <Snackbar style={{position: "absolute", bottom: 0}}
+        visible={visible}
+        onDismiss={()=>onDismissSnackBar()}
+        theme={{ colors: { onSurface: "#6DFF83", surface: "black", }}}
+        duration={2000}
+        action={{
+          label: 'OK',
+          onPress: () => {
+            onDismissSnackBar()
+          },
+        }}
+        >
+        Post deletado!
+      </Snackbar>
 
     </ScreenContainer>
   );
