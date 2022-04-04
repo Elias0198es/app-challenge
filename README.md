@@ -6,7 +6,7 @@
 ![implementation](http://img.shields.io/static/v1?label=FUTURE%20IMPLEMENTATIONS&message=PAGINATION%20AND%20LAYOUT%20UPGRADE&color=GREEN&style=for-the-badge)
 ![releaase](http://img.shields.io/static/v1?label=RELEASE%20DATE&message=MARCH%202022&color=GREEN&style=for-the-badge)
 
-## :scroll: Descrição do Projeto
+## :scroll: Descrição do projeto
 
 Aplicativo que consome uma fake API(ClickPosts) e realiza um CRUD da mesma. O link da API pode ser encontrado
 <a href="https://jsonplaceholder.typicode.com/" target="_blank">aqui</a>
@@ -22,11 +22,17 @@ Aplicativo que consome uma fake API(ClickPosts) e realiza um CRUD da mesma. O li
 
 https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-b9c0-dc2d50328739.mp4
 
-## :rocket: Futuras Implementações Previstas
+## :rocket: Próximas implementações previstas
 
 1. Paginação dos posts para carregar alguns por vez na tela
 2. Ação do icone ThumbsUp/ThumbsDown (like e deslike), deve refletir para um post individualmente ao invés de todos
-
+3. Os formulários só devem aceitar requisições com os campos preenchidos
+4. Width dos containers não deve preencher a tela toda, mas ter margens laterais (telas: detalhes do usuário,nova postagem e editar postagem)
+5. Estilizar textos e inputs dos formulários 
+6. Corrigir Bug do Snackbar na tela principal (Não desaparece sozinho)
+7. Ação de confirmação para Botão delete (Deseja realmente excluir ? Ok, cancelar) 
+8. Menubottom - quando tela for para página diferente os icones devem ficar como outline
+9. card dos poster devem ter cores diferentes para variação
 
 
 ## 📁 Acesso ao projeto
