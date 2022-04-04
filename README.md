@@ -20,19 +20,23 @@ Aplicativo que consome uma fake API(ClickPosts) e realiza um CRUD da mesma. O li
 - `Funcionalidade 5`: Cadastra um post
 - `Funcionalidade 6`: Curte ou descurte um post
 
-https://user-images.githubusercontent.com/62041104/160769823-2aad2fdf-93d6-45a2-b9c0-dc2d50328739.mp4
+
+
+https://user-images.githubusercontent.com/62041104/161479115-aca301f8-9f1e-40b5-b121-774e6198f5ad.mp4
+
+
 
 ## :rocket: Próximas implementações previstas
 
 1. Paginação dos posts para carregar alguns por vez na tela
-2. Ação do icone ThumbsUp/ThumbsDown (like e deslike), deve refletir para um post individualmente ao invés de todos
+2. Ação do icone ThumbsUp/ThumbsDown (like e deslike) deve refletir para um post individualmente ao invés de todos
 3. Os formulários só devem aceitar requisições com os campos preenchidos
 4. Width dos containers não deve preencher a tela toda, mas ter margens laterais (telas: detalhes do usuário,nova postagem e editar postagem)
 5. Estilizar textos e inputs dos formulários 
-6. Corrigir Bug do Snackbar na tela principal (Não desaparece sozinho)
+6. Corrigir Bug da ação delete no Snackbar da tela principal (Não desaparece sozinho)
 7. Ação de confirmação para Botão delete (Deseja realmente excluir ? Ok, cancelar) 
-8. Menubottom - quando tela for para página diferente os icones devem ficar como outline
-9. card dos poster devem ter cores diferentes para variação
+8. Menu inferior - quando tela for para página diferente(editar post/detalhes de usuário) os icones devem ficar como outline
+9. card dos posters devem ter cores diferentes para variação
 
 
 ## 📁 Acesso ao projeto
